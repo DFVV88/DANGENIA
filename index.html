@@ -28,9 +28,7 @@
               display: ["Outfit", "sans-serif"],
               sans: ["Inter", "sans-serif"],
             },
-            borderRadius: {
-              DEFAULT: "1rem",
-            },
+            borderRadius: { DEFAULT: "1rem" },
           },
         },
       };
@@ -60,9 +58,7 @@
     </style>
   </head>
 
-  <body
-    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300"
-  >
+  <body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
     <!-- NAV -->
     <nav
       class="fixed top-0 w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10"
@@ -89,7 +85,7 @@
             >Contrataciones</a
           >
 
-          <!-- Toggle Dark (solo desktop) -->
+          <!-- Toggle Dark -->
           <button
             id="theme-toggle"
             class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
@@ -103,76 +99,97 @@
 
         <!-- Mobile button -->
         <button
-          id="mobileMenuBtn"
+          id="mobile-menu-btn"
           class="md:hidden text-3xl p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
           aria-label="Abrir menú"
-          aria-controls="mobileMenu"
+          aria-controls="mobile-menu"
           aria-expanded="false"
           type="button"
         >
-          <span class="material-icons-round">menu</span>
+          <span id="mobile-menu-icon" class="material-icons-round">menu</span>
         </button>
       </div>
 
-      <!-- Mobile overlay -->
-      <div id="mobileOverlay" class="fixed inset-0 bg-black/50 hidden md:hidden"></div>
-
-      <!-- Mobile menu panel -->
+      <!-- Mobile menu overlay -->
       <div
-        id="mobileMenu"
-        class="fixed top-0 right-0 h-full w-[82%] max-w-sm bg-white dark:bg-[#0a0a0b] border-l border-slate-200 dark:border-white/10 shadow-2xl translate-x-full transition-transform duration-300 md:hidden"
+        id="mobile-menu"
+        class="md:hidden fixed inset-0 z-[60] hidden"
         aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
       >
-        <div class="p-6 flex items-center justify-between border-b border-slate-200 dark:border-white/10">
-          <span class="font-display font-black text-xl tracking-tighter">MENÚ</span>
-          <button
-            id="mobileCloseBtn"
-            class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
-            aria-label="Cerrar menú"
-            type="button"
-          >
-            <span class="material-icons-round">close</span>
-          </button>
-        </div>
+        <!-- Backdrop -->
+        <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/50"></div>
 
-        <div class="p-6 flex flex-col gap-4 text-sm font-semibold uppercase tracking-widest">
-          <a class="py-3 border-b border-slate-100 dark:border-white/10 hover:text-primary transition-colors" href="index.html"
-            >Inicio</a
-          >
-          <a class="py-3 border-b border-slate-100 dark:border-white/10 hover:text-primary transition-colors" href="sobremi.html"
-            >Sobre mí</a
-          >
-          <a class="py-3 border-b border-slate-100 dark:border-white/10 hover:text-primary transition-colors" href="videos.html"
-            >Videos</a
-          >
-          <a class="py-3 border-b border-slate-100 dark:border-white/10 hover:text-primary transition-colors" href="musica.html"
-            >Música</a
-          >
-          <a
-            class="mt-2 inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-2xl hover:opacity-90 transition-all"
-            href="contrataciones.html"
-            >Contrataciones</a
-          >
+        <!-- Panel -->
+        <div
+          class="absolute top-0 right-0 h-full w-[86%] max-w-sm bg-background-light dark:bg-background-dark border-l border-slate-200 dark:border-white/10 shadow-2xl"
+        >
+          <div class="h-20 px-6 flex items-center justify-between border-b border-slate-200 dark:border-white/10">
+            <div class="flex items-center gap-3">
+              <img
+                alt="DANGENIA Logo"
+                class="h-10 w-10 rounded-full"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp90O_f0ztJyadv3HNTwB911RgEnrLdocC0V1F80ZdVsGLJROmj9ci00o14off82fqcivgELFsPBntoM1kbQQtVNbE0A_VFunsjBQIZ4o_G_oS-c4Fz1TLj8P9bJpgI0QHKn5KUtTBdDMGq-odM9YlEmTrKn_aGHGbnMRRCHQAjsCcJnQzHwJbBXbggs5GO9GS9EQDy7qaGNskb5eZKOiFRzzNsQ97upbSVHUpaYbZiOAEKnaG5-SN3Y0eTtkPLkIbxZAOIyTa"
+              />
+              <div class="leading-tight">
+                <p class="font-display font-black text-lg tracking-tight">DANGENIA</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-widest">Menú</p>
+              </div>
+            </div>
 
-          <!-- Toggle Dark (mobile) -->
-          <button
-            id="theme-toggle-mobile"
-            class="mt-4 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors font-bold"
-            type="button"
-            aria-label="Cambiar tema"
-          >
-            <span class="material-icons-round text-primary">contrast</span>
-            Cambiar tema
-          </button>
+            <button
+              id="mobile-menu-close"
+              class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+              aria-label="Cerrar menú"
+              type="button"
+            >
+              <span class="material-icons-round text-3xl">close</span>
+            </button>
+          </div>
+
+          <div class="p-6">
+            <div class="grid gap-3">
+              <a class="px-5 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors font-bold" href="index.html">Inicio</a>
+              <a class="px-5 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors font-bold" href="sobremi.html">Sobre mí</a>
+              <a class="px-5 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors font-bold" href="videos.html">Videos</a>
+              <a class="px-5 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors font-bold" href="musica.html">Música</a>
+
+              <a
+                class="mt-2 px-6 py-4 rounded-2xl gradient-bg text-white font-black text-center hover:opacity-95 transition-opacity"
+                href="contrataciones.html"
+                >Contrataciones</a
+              >
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-slate-200 dark:border-white/10">
+              <button
+                id="theme-toggle-mobile"
+                class="w-full px-6 py-4 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 font-bold flex items-center justify-center gap-2 hover:opacity-95 transition-opacity"
+                type="button"
+              >
+                <span class="material-icons-round">contrast</span>
+                Cambiar tema
+              </button>
+
+              <a
+                class="mt-3 w-full px-6 py-4 rounded-2xl border border-slate-200 dark:border-white/10 font-bold flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
+                href="https://www.tiktok.com/@dangenia88"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="material-icons-round text-primary">play_circle</span>
+                TikTok
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
 
     <!-- HERO -->
     <section class="relative pt-32 pb-20 md:pt-52 md:pb-40 overflow-hidden" id="inicio">
-      <div
-        class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"
-      ></div>
+      <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
       <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] -z-10"></div>
 
       <div class="max-w-7xl mx-auto px-6 text-center">
@@ -235,88 +252,48 @@
         </div>
 
         <div class="video-container flex overflow-x-auto gap-6 pb-8 snap-x">
-          <a
-            class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
-            href="videos.html"
-            aria-label="Ver más videos"
-          >
-            <img
-              alt="Video performance"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHiEJTsx7do9RLqbDsKaChgwEcBZ1XXhUQGFUbrifsSH8C2_7lEuNmeZv6xk70kuoKcpTeBv5RPTBQUM57PpXzZgjqv7HP_uu4Ai9NztzNbmSW9JNgh4n_f2TorRohbQlpUfIlUSHhfyDMdEZwpcvJEaefZFNAbHs6_C-tbL14ili14UbLFCrJKF8s8RNfbjnAdDj21M95-Nv2wE6-9HX0KLgH5voFqUiyb2CI8CWJCX1EVgDeF-7C6mD1KWaNRCX1K1IKPnEW"
-            />
+          <a class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start" href="videos.html" aria-label="Ver más videos">
+            <img alt="Video performance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHiEJTsx7do9RLqbDsKaChgwEcBZ1XXhUQGFUbrifsSH8C2_7lEuNmeZv6xk70kuoKcpTeBv5RPTBQUM57PpXzZgjqv7HP_uu4Ai9NztzNbmSW9JNgh4n_f2TorRohbQlpUfIlUSHhfyDMdEZwpcvJEaefZFNAbHs6_C-tbL14ili14UbLFCrJKF8s8RNfbjnAdDj21M95-Nv2wE6-9HX0KLgH5voFqUiyb2CI8CWJCX1EVgDeF-7C6mD1KWaNRCX1K1IKPnEW" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             <div class="absolute bottom-6 left-6">
-              <p class="text-white font-bold flex items-center gap-2">
-                <span class="material-icons-round text-primary text-sm">favorite</span>
-                12.4K
-              </p>
+              <p class="text-white font-bold flex items-center gap-2"><span class="material-icons-round text-primary text-sm">favorite</span>12.4K</p>
             </div>
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <span class="material-icons-round text-6xl text-white">play_arrow</span>
             </div>
           </a>
 
-          <a
-            class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
-            href="videos.html"
-            aria-label="Ver más videos"
-          >
-            <img
-              alt="Music studio"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBicJMteOph1aD5EPgE8bcwM16rJuh2zkftiNwXWHF7hvVzFnqCvat_z5kyPutXE5Y5lWmKB8wIZ1KieZBr_Kx2FzNYYMleKfTe6EO7ORmXyZh8xPyrqr_dRXi1UQdD-32Kraf5h9T9GBIOtvY42S-qjtBlW_IKNZH7JDclRNhN9mVFJm3udW3PVJDA01w7hC2NLw32wFPvg878Il2lTrJiyYU6UfS5SiUPCKnX4kLyyVCGIxJBKVPoL5Vl95Hqvfz5CcXrsa"
-            />
+          <a class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start" href="videos.html" aria-label="Ver más videos">
+            <img alt="Music studio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBicJMteOph1aD5EPgE8bcwM16rJuh2zkftiNwXWHF7hvVzFnqCvat_z5kyPutXE5Y5lWmKB8wIZ1KieZBr_Kx2FzNYYMleKfTe6EO7ORmXyZh8xPyrqr_dRXi1UQdD-32Kraf5h9T9GBIOtvY42S-qjtBlW_IKNZH7JDclRNhN9mVFJm3udW3PVJDA01w7hC2NLw32wFPvg878Il2lTrJiyYU6UfS5SiUPCKnX4kLyyVCGIxJBKVPoL5Vl95Hqvfz5CcXrsa" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             <div class="absolute bottom-6 left-6">
-              <p class="text-white font-bold flex items-center gap-2">
-                <span class="material-icons-round text-primary text-sm">favorite</span>
-                8.9K
-              </p>
+              <p class="text-white font-bold flex items-center gap-2"><span class="material-icons-round text-primary text-sm">favorite</span>8.9K</p>
             </div>
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <span class="material-icons-round text-6xl text-white">play_arrow</span>
             </div>
           </a>
 
-          <a
-            class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
-            href="videos.html"
-            aria-label="Ver más videos"
-          >
-            <img
-              alt="Live concert"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYv5p5G5-OXwFSwVW3UD5AWapmX-OizfpL6UC4WNSbeTpVVsHXX2-L9xg-qmQb58YKLFqNBU_oo0TUYIYuCLAk6WylSWVU4CXXdd7OQnNDo9894uAE-UGeqT87ttT75PMCpGV2C762j_5XVboTXavBEXo6DYaXauPUXWwNPyvjG4kyw3f3xFV1Cf0ZMhwnn_BoUybiPrrb_-d0UaHI_XMeSu5TInTNsYsK_E814E93glxPwCUJrH3SFQ3Wjb0DL7b6ClNykwNN"
-            />
+          <a class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start" href="videos.html" aria-label="Ver más videos">
+            <img alt="Live concert" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYv5p5G5-OXwFSwVW3UD5AWapmX-OizfpL6UC4WNSbeTpVVsHXX2-L9xg-qmQb58YKLFqNBU_oo0TUYIYuCLAk6WylSWVU4CXXdd7OQnNDo9894uAE-UGeqT87ttT75PMCpGV2C762j_5XVboTXavBEXo6DYaXauPUXWwNPyvjG4kyw3f3xFV1Cf0ZMhwnn_BoUybiPrrb_-d0UaHI_XMeSu5TInTNsYsK_E814E93glxPwCUJrH3SFQ3Wjb0DL7b6ClNykwNN" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             <div class="absolute bottom-6 left-6">
-              <p class="text-white font-bold flex items-center gap-2">
-                <span class="material-icons-round text-primary text-sm">favorite</span>
-                25.2K
-              </p>
+              <p class="text-white font-bold flex items-center gap-2"><span class="material-icons-round text-primary text-sm">favorite</span>25.2K</p>
             </div>
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <span class="material-icons-round text-6xl text-white">play_arrow</span>
             </div>
           </a>
 
-          <a
-            class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
-            href="videos.html"
-            aria-label="Ver más videos"
-          >
-            <img
-              alt="Acoustic session"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd6sqnk9mkFZToIWcZiYxC0XaxyKvE4aIOamKL3zmwqvWWtZQF51XTN-hpdJOUDjfCBOESGZTOXY6SgVjUROJQFt9U2alAQKIpFvGsItPeRq0-tGixvx2jBvmnjBsE4vtswH1u2910SphZ6kIdbOiwLDPoR_uVZ_7SYMAgo7faJLGfSTFsO1fcNVojVKFphlEcNZoe55RCXouDsB2UI6MHiTHZ1X4pQGmE1LNwRGJO0_YpuOpRMA5OdQWoUGpJ2s_RPbyxqb8R"
-            />
+          <a class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start" href="videos.html" aria-label="Ver más videos">
+            <img alt="Acoustic session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd6sqnk9mkFZToIWcZiYxC0XaxyKvE4aIOamKL3zmwqvWWtZQF51XTN-hpdJOUDjfCBOESGZTOXY6SgVjUROJQFt9U2alAQKIpFvGsItPeRq0-tGixvx2jBvmnjBsE4vtswH1u2910SphZ6kIdbOiwLDPoR_uVZ_7SYMAgo7faJLGfSTFsO1fcNVojVKFphlEcNZoe55RCXouDsB2UI6MHiTHZ1X4pQGmE1LNwRGJO0_YpuOpRMA5OdQWoUGpJ2s_RPbyxqb8R" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
             <div class="absolute bottom-6 left-6">
-              <p class="text-white font-bold flex items-center gap-2">
-                <span class="material-icons-round text-primary text-sm">favorite</span>
-                15.1K
-              </p>
+              <p class="text-white font-bold flex items-center gap-2"><span class="material-icons-round text-primary text-sm">favorite</span>15.1K</p>
             </div>
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
               <span class="material-icons-round text-6xl text-white">play_arrow</span>
@@ -325,10 +302,7 @@
         </div>
 
         <div class="mt-6">
-          <a
-            href="videos.html"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 font-bold hover:text-primary transition-colors"
-          >
+          <a href="videos.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/10 font-bold hover:text-primary transition-colors">
             Ver todos los videos
             <span class="material-icons-round">arrow_forward</span>
           </a>
@@ -336,7 +310,7 @@
       </div>
     </section>
 
-    <!-- SOBRE MÍ (preview en Home) -->
+    <!-- SOBRE MÍ -->
     <section class="py-24" id="sobre-mi">
       <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16">
         <div class="relative">
@@ -348,9 +322,7 @@
           />
           <div class="absolute -bottom-8 -right-8 glass-card p-8 rounded-3xl max-w-[240px]">
             <p class="font-display font-bold text-lg mb-1">DANGENIA</p>
-            <p class="text-sm text-slate-500 dark:text-slate-400">
-              Creador de atmósferas musicales y momentos inolvidables.
-            </p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Creador de atmósferas musicales y momentos inolvidables.</p>
           </div>
         </div>
 
@@ -362,8 +334,7 @@
 
           <div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             <p>
-              Hola, soy DANGENIA. Mi música no es solo sonido; es un viaje por las historias que todos vivimos pero a
-              veces no sabemos cómo contar.
+              Hola, soy DANGENIA. Mi música no es solo sonido; es un viaje por las historias que todos vivimos pero a veces no sabemos cómo contar.
             </p>
             <p>
               Desde que empecé en TikTok, mi meta ha sido crear un espacio donde la autenticidad sea la protagonista.
@@ -419,58 +390,37 @@
         <div class="grid md:grid-cols-3 gap-8">
           <div class="glass-card p-6 rounded-[2rem] hover:bg-white/10 transition-colors group cursor-pointer">
             <div class="aspect-square rounded-2xl overflow-hidden mb-6">
-              <img
-                alt="Album Cover"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbU6CQZgyRkM_Ff-y8YBUnupcLnyOh6_TAoYtL-RIlcqEnwijzid35RzTSLBxgTenaAhKMjNzebxMk7WznrLBPpChWMn1ALLop7Yutp_DxXHWEpMex6sdauS3BUKjVuxwsWJYgjoRVy206lR7hU1mLCxoMm_1nminoIBloErff-WtT7zDWiM2mqGvhpkcUekyZSPK0_80xwjjT0iz1HO2b4akMRBoV3MJCvyDDP4542JEJxO79vxB9Zn1AyzZ6WHwXf15AnHyF"
-              />
+              <img alt="Album Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbU6CQZgyRkM_Ff-y8YBUnupcLnyOh6_TAoYtL-RIlcqEnwijzid35RzTSLBxgTenaAhKMjNzebxMk7WznrLBPpChWMn1ALLop7Yutp_DxXHWEpMex6sdauS3BUKjVuxwsWJYgjoRVy206lR7hU1mLCxoMm_1nminoIBloErff-WtT7zDWiM2mqGvhpkcUekyZSPK0_80xwjjT0iz1HO2b4akMRBoV3MJCvyDDP4542JEJxO79vxB9Zn1AyzZ6WHwXf15AnHyF" />
             </div>
             <h4 class="text-xl font-bold mb-1">Ecos del Alma</h4>
             <p class="text-slate-400 mb-6 text-sm italic">Single • 2024</p>
-            <a
-              href="musica.html"
-              class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
-            >
-              <span class="material-icons-round">play_arrow</span>
-              Reproducir ahora
+            <a href="musica.html" class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors">
+              <span class="material-icons-round">play_arrow</span> Reproducir ahora
             </a>
           </div>
 
           <div class="glass-card p-6 rounded-[2rem] hover:bg-white/10 transition-colors group cursor-pointer">
             <div class="aspect-square rounded-2xl overflow-hidden mb-6">
-              <img
-                alt="Album Cover"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpb-pcRPQ83CFAlFE9omNiA2-t-F1tLp6BSeqpjhbhAmqYAUfA088fExnEmaKQTXNLcgE7N_j5ownn_SAjzi2Otw26cIddsh9sziGKytdVgfPPbXIbJA-oxMqowTwBO66AFa-sh1sOgAkt9wZZ6UEjBLGfzv92DjoNokai00HJGwDlFXQc0mZVm7v3J_-bpLiXq9GmZCb_Wk5m7Gh9_L8JBD-QOfbijxOpiVI3mZkVaO3A9syG_XlOHxiZgeiLs3QXZxgDeeel"
-              />
+              <img alt="Album Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpb-pcRPQ83CFAlFE9omNiA2-t-F1tLp6BSeqpjhbhAmqYAUfA088fExnEmaKQTXNLcgE7N_j5ownn_SAjzi2Otw26cIddsh9sziGKytdVgfPPbXIbJA-oxMqowTwBO66AFa-sh1sOgAkt9wZZ6UEjBLGfzv92DjoNokai00HJGwDlFXQc0mZVm7v3J_-bpLiXq9GmZCb_Wk5m7Gh9_L8JBD-QOfbijxOpiVI3mZkVaO3A9syG_XlOHxiZgeiLs3QXZxgDeeel" />
             </div>
             <h4 class="text-xl font-bold mb-1">Luces Nocturnas</h4>
             <p class="text-slate-400 mb-6 text-sm italic">EP • 2023</p>
-            <a
-              href="musica.html"
-              class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
-            >
-              <span class="material-icons-round">play_arrow</span>
-              Reproducir ahora
+            <a href="musica.html" class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors">
+              <span class="material-icons-round">play_arrow</span> Reproducir ahora
             </a>
           </div>
 
           <div class="glass-card p-6 rounded-[2rem] hover:bg-white/10 transition-colors group cursor-pointer">
             <div class="aspect-square rounded-2xl overflow-hidden mb-6">
-              <img
-                alt="Album Cover"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOtmIaAjTrIsvgJppmMx8BTI-U9oDXK0X49seyloxtL04rV0_ShfhQQZCn8GGkPCxdD8hbn5yHVjx4lNI1nyDm0QbUbKGezf6xbtz8TJrKipgZLdg6PxSvNp32wqBUdtPTxlcW0ygKpOcXuv98j8xGhsLF4Eq3YERx4J7GJBmUVWLQH5vjVKwDakL9GasnTbNotBo9xuplXmAjGSrZsXgJNrIsKSS0nEqKJKrGopwN72nmFZWXs2tLxd3ldMIiTJVIzUzpZ3L0"
-              />
+              <img alt="Album Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOtmIaAjTrIsvgJppmMx8BTI-U9oDXK0X49seyloxtL04rV0_ShfhQQZCn8GGkPCxdD8hbn5yHVjx4lNI1nyDm0QbUbKGezf6xbtz8TJrKipgZLdg6PxSvNp32wqBUdtPTxlcW0ygKpOcXuv98j8xGhsLF4Eq3YERx4J7GJBmUVWLQH5vjVKwDakL9GasnTbNotBo9xuplXmAjGSrZsXgJNrIsKSS0nEqKJKrGopwN72nmFZWXs2tLxd3ldMIiTJVIzUzpZ3L0" />
             </div>
             <h4 class="text-xl font-bold mb-1">Sin Mirar Atrás</h4>
             <p class="text-slate-400 mb-6 text-sm italic">Single • 2023</p>
-            <a
-              href="musica.html"
-              class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
-            >
-              <span class="material-icons-round">play_arrow</span>
-              Reproducir ahora
+            <a href="musica.html" class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors">
+              <span class="material-icons-round">play_arrow</span> Reproducir ahora
             </a>
           </div>
         </div>
@@ -488,20 +438,14 @@
           <div class="text-center mb-12">
             <h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Contacto</h2>
             <h3 class="text-5xl font-display font-bold">Llevemos el show a tu ciudad</h3>
-            <p class="mt-4 text-slate-600 dark:text-slate-400">
-              Disponible para eventos, festivales y colaboraciones de marca.
-            </p>
+            <p class="mt-4 text-slate-600 dark:text-slate-400">Disponible para eventos, festivales y colaboraciones de marca.</p>
 
             <div class="mt-8 flex flex-col md:flex-row gap-3 justify-center">
-              <a
-                href="contrataciones.html"
-                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full gradient-bg text-white font-bold"
-              >
+              <a href="contrataciones.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full gradient-bg text-white font-bold">
                 Ir a Contrataciones
                 <span class="material-icons-round">arrow_forward</span>
               </a>
 
-              <!-- CAMBIA TU NUMERO AQUI (solo numeros, sin +) -->
               <a
                 href="https://wa.me/51TU_NUMERO?text=Hola%20DANGENIA%2C%20quiero%20cotizar%20una%20presentaci%C3%B3n"
                 target="_blank"
@@ -518,27 +462,17 @@
             <div class="grid md:grid-cols-2 gap-6">
               <div>
                 <label class="block text-sm font-semibold mb-2 ml-1">Nombre completo</label>
-                <input
-                  class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                  placeholder="Ej. Juan Pérez"
-                  type="text"
-                />
+                <input class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Ej. Juan Pérez" type="text" />
               </div>
               <div>
                 <label class="block text-sm font-semibold mb-2 ml-1">Email</label>
-                <input
-                  class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                  placeholder="email@ejemplo.com"
-                  type="email"
-                />
+                <input class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="email@ejemplo.com" type="email" />
               </div>
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2 ml-1">Tipo de evento</label>
-              <select
-                class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none"
-              >
+              <select class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none">
                 <option>Festival / Concierto</option>
                 <option>Evento Privado</option>
                 <option>Colaboración Digital</option>
@@ -548,17 +482,10 @@
 
             <div>
               <label class="block text-sm font-semibold mb-2 ml-1">Mensaje</label>
-              <textarea
-                class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                placeholder="Cuéntanos más sobre tu propuesta..."
-                rows="4"
-              ></textarea>
+              <textarea class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Cuéntanos más sobre tu propuesta..." rows="4"></textarea>
             </div>
 
-            <button
-              class="w-full py-5 gradient-bg text-white font-bold rounded-2xl hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] hover:scale-[1.02] transition-all"
-              type="submit"
-            >
+            <button class="w-full py-5 gradient-bg text-white font-bold rounded-2xl hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] hover:scale-[1.02] transition-all" type="submit">
               Enviar Propuesta
             </button>
           </form>
@@ -570,11 +497,8 @@
     <footer class="py-12 border-t border-slate-200 dark:border-white/10">
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="flex items-center gap-3">
-          <img
-            alt="DANGENIA Logo"
-            class="h-8 w-8 rounded-full"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnNwkKdyifzHE_lzJZLzOq1u4uJkSNjnBp8fTetQlmUrT2FoKt09jlxt_DR-ha7Gd4-nykZFVWSahXZmcfXnfBudKoDv8Mm6OLTFekwAtL6PtSuNPEtQM5EyGagE3AfSPWp3aeS9dQrY58IDjXlqJ0DHHK8rrBfGlpFPkqCZY-aRiilo4JHYHkKHyNeQec5RNL2LRFhe9UKy3WRQNxlWv1VJLOVcvm-ZKryx_4wuhAuRslGVVbkH-tUmWXudrsehPN4oMmHHv3"
-          />
+          <img alt="DANGENIA Logo" class="h-8 w-8 rounded-full"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnNwkKdyifzHE_lzJZLzOq1u4uJkSNjnBp8fTetQlmUrT2FoKt09jlxt_DR-ha7Gd4-nykZFVWSahXZmcfXnfBudKoDv8Mm6OLTFekwAtL6PtSuNPEtQM5EyGagE3AfSPWp3aeS9dQrY58IDjXlqJ0DHHK8rrBfGlpFPkqCZY-aRiilo4JHYHkKHyNeQec5RNL2LRFhe9UKy3WRQNxlWv1VJLOVcvm-ZKryx_4wuhAuRslGVVbkH-tUmWXudrsehPN4oMmHHv3" />
           <span class="font-display font-black text-xl tracking-tighter">DANGENIA</span>
         </div>
 
@@ -586,15 +510,7 @@
         </div>
 
         <div class="flex items-center gap-6">
-          <a
-            class="text-slate-400 hover:text-primary transition-colors"
-            href="https://www.tiktok.com/@dangenia88"
-            target="_blank"
-            rel="noopener"
-            aria-label="TikTok"
-          >
-            TikTok
-          </a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="https://www.tiktok.com/@dangenia88" target="_blank" rel="noopener" aria-label="TikTok">TikTok</a>
           <a class="text-slate-400 hover:text-primary transition-colors" href="videos.html" aria-label="Instagram">Instagram</a>
           <a class="text-slate-400 hover:text-primary transition-colors" href="videos.html" aria-label="YouTube">YouTube</a>
           <a class="text-slate-400 hover:text-primary transition-colors" href="musica.html" aria-label="Spotify">Spotify</a>
@@ -615,9 +531,9 @@
       });
 
       // THEME: carga + toggle (localStorage)
-      const themeToggleBtn = document.getElementById("theme-toggle");
-      const themeToggleMobileBtn = document.getElementById("theme-toggle-mobile");
       const root = document.documentElement;
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const themeToggleMobile = document.getElementById("theme-toggle-mobile");
 
       function applyTheme() {
         if (
@@ -630,8 +546,6 @@
         }
       }
 
-      applyTheme();
-
       function toggleTheme() {
         if (root.classList.contains("dark")) {
           root.classList.remove("dark");
@@ -642,39 +556,46 @@
         }
       }
 
-      if (themeToggleBtn) themeToggleBtn.addEventListener("click", toggleTheme);
-      if (themeToggleMobileBtn) themeToggleMobileBtn.addEventListener("click", toggleTheme);
+      applyTheme();
 
-      // ===== Mobile Menu =====
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const mobileCloseBtn = document.getElementById("mobileCloseBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const mobileOverlay = document.getElementById("mobileOverlay");
+      if (themeToggleBtn) themeToggleBtn.addEventListener("click", toggleTheme);
+      if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
+
+      // MOBILE MENU
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileClose = document.getElementById("mobile-menu-close");
+      const mobileBackdrop = document.getElementById("mobile-menu-backdrop");
+      const mobileIcon = document.getElementById("mobile-menu-icon");
 
       function openMenu() {
-        mobileMenu.classList.remove("translate-x-full");
-        mobileOverlay.classList.remove("hidden");
-        mobileMenuBtn.setAttribute("aria-expanded", "true");
+        if (!mobileMenu) return;
+        mobileMenu.classList.remove("hidden");
         mobileMenu.setAttribute("aria-hidden", "false");
+        mobileBtn.setAttribute("aria-expanded", "true");
         document.body.style.overflow = "hidden";
+        if (mobileIcon) mobileIcon.textContent = "close";
       }
 
       function closeMenu() {
-        mobileMenu.classList.add("translate-x-full");
-        mobileOverlay.classList.add("hidden");
-        mobileMenuBtn.setAttribute("aria-expanded", "false");
+        if (!mobileMenu) return;
+        mobileMenu.classList.add("hidden");
         mobileMenu.setAttribute("aria-hidden", "true");
+        mobileBtn.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
+        if (mobileIcon) mobileIcon.textContent = "menu";
       }
 
-      if (mobileMenuBtn && mobileMenu && mobileOverlay) {
-        mobileMenuBtn.addEventListener("click", openMenu);
-        mobileOverlay.addEventListener("click", closeMenu);
-      }
+      if (mobileBtn) mobileBtn.addEventListener("click", () => {
+        const isOpen = mobileBtn.getAttribute("aria-expanded") === "true";
+        if (isOpen) closeMenu();
+        else openMenu();
+      });
 
-      if (mobileCloseBtn) mobileCloseBtn.addEventListener("click", closeMenu);
+      if (mobileClose) mobileClose.addEventListener("click", closeMenu);
+      if (mobileBackdrop) mobileBackdrop.addEventListener("click", closeMenu);
 
-      // Cerrar al hacer click en un link del menú
+      // Cerrar al hacer click en un link del panel
       if (mobileMenu) {
         mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
       }

@@ -87,6 +87,17 @@
             href="contrataciones.html"
             >Contrataciones</a
           >
+
+          <!-- Toggle Dark -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+            aria-label="Cambiar tema"
+            type="button"
+          >
+            <span class="material-icons-round text-xl block dark:hidden">dark_mode</span>
+            <span class="material-icons-round text-xl hidden dark:block">light_mode</span>
+          </button>
         </div>
 
         <button class="md:hidden text-3xl" aria-label="Abrir menú">
@@ -112,7 +123,6 @@
         </p>
 
         <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-          <!-- Ver TikTok -> TikTok real -->
           <a
             class="group flex items-center gap-2 px-8 py-4 bg-white dark:bg-white/10 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-full font-bold hover:scale-105 transition-all"
             href="https://www.tiktok.com/@dangenia88"
@@ -123,7 +133,6 @@
             Ver TikTok
           </a>
 
-          <!-- Escuchar música -> página música -->
           <a
             class="flex items-center gap-2 px-8 py-4 gradient-bg text-white rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all"
             href="musica.html"
@@ -132,7 +141,6 @@
             Escuchar música
           </a>
 
-          <!-- Contrataciones -> página contrataciones -->
           <a
             class="flex items-center gap-2 px-8 py-4 bg-slate-900 dark:bg-slate-800 text-white rounded-full font-bold hover:scale-105 transition-all"
             href="contrataciones.html"
@@ -153,7 +161,6 @@
             <h3 class="text-4xl font-display font-bold">Últimos Videos</h3>
           </div>
 
-          <!-- Seguir en TikTok -> TikTok real -->
           <a
             class="text-slate-500 hover:text-primary flex items-center gap-1 font-semibold transition-colors"
             href="https://www.tiktok.com/@dangenia88"
@@ -166,7 +173,6 @@
         </div>
 
         <div class="video-container flex overflow-x-auto gap-6 pb-8 snap-x">
-          <!-- Card 1 -->
           <a
             class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
             href="videos.html"
@@ -189,7 +195,6 @@
             </div>
           </a>
 
-          <!-- Card 2 -->
           <a
             class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
             href="videos.html"
@@ -212,7 +217,6 @@
             </div>
           </a>
 
-          <!-- Card 3 -->
           <a
             class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
             href="videos.html"
@@ -235,7 +239,6 @@
             </div>
           </a>
 
-          <!-- Card 4 -->
           <a
             class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start"
             href="videos.html"
@@ -436,6 +439,7 @@
                 <span class="material-icons-round">arrow_forward</span>
               </a>
 
+              <!-- CAMBIA TU NUMERO AQUI (solo numeros, sin +) -->
               <a
                 href="https://wa.me/51TU_NUMERO?text=Hola%20DANGENIA%2C%20quiero%20cotizar%20una%20presentaci%C3%B3n"
                 target="_blank"
@@ -448,7 +452,6 @@
             </div>
           </div>
 
-          <!-- Form (sigue igual, pero ahora tienes CTA a contrataciones) -->
           <form class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
@@ -513,7 +516,12 @@
           <span class="font-display font-black text-xl tracking-tighter">DANGENIA</span>
         </div>
 
-        <p class="text-sm text-slate-500 dark:text-slate-400">© 2024 DANGENIA. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-6 text-sm font-semibold">
+          <a class="text-slate-500 hover:text-primary transition-colors" href="sobremi.html">Sobre mí</a>
+          <a class="text-slate-500 hover:text-primary transition-colors" href="musica.html">Música</a>
+          <a class="text-slate-500 hover:text-primary transition-colors" href="videos.html">Videos</a>
+          <a class="text-slate-500 hover:text-primary transition-colors" href="contrataciones.html">Contacto</a>
+        </div>
 
         <div class="flex items-center gap-6">
           <a
@@ -525,10 +533,14 @@
           >
             TikTok
           </a>
-          <a class="text-slate-400 hover:text-primary transition-colors" href="#" aria-label="Instagram">Instagram</a>
-          <a class="text-slate-400 hover:text-primary transition-colors" href="#" aria-label="YouTube">YouTube</a>
-          <a class="text-slate-400 hover:text-primary transition-colors" href="#" aria-label="Spotify">Spotify</a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="videos.html" aria-label="Instagram">Instagram</a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="videos.html" aria-label="YouTube">YouTube</a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="musica.html" aria-label="Spotify">Spotify</a>
         </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 pt-6 text-center">
+        <p class="text-sm text-slate-500 dark:text-slate-400">© 2024 DANGENIA. Todos los derechos reservados.</p>
       </div>
     </footer>
 
@@ -540,8 +552,34 @@
         else nav.classList.remove("shadow-lg");
       });
 
-      // Modo oscuro por defecto
-      document.documentElement.classList.add("dark");
+      // THEME: carga + toggle (localStorage)
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const root = document.documentElement;
+
+      function applyTheme() {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          root.classList.add("dark");
+        } else {
+          root.classList.remove("dark");
+        }
+      }
+
+      applyTheme();
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+          if (root.classList.contains("dark")) {
+            root.classList.remove("dark");
+            localStorage.theme = "light";
+          } else {
+            root.classList.add("dark");
+            localStorage.theme = "dark";
+          }
+        });
+      }
     </script>
   </body>
 </html>

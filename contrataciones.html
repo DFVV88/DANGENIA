@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>DANGENIA - Contrataciones Oficiales</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<script>
+<html class="scroll-smooth" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DANGENIA - Contrataciones Oficiales</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+
+    <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              primary: "#E11D48", // A vibrant pink from the logo
+              primary: "#E11D48",
               "background-light": "#FAFAFA",
               "background-dark": "#0A0A0A",
               "accent-orange": "#F97316",
@@ -29,159 +35,315 @@
         },
       };
     </script>
-<style>
-        .logo-gradient {
-            background: linear-gradient(135deg, #d946ef 0%, #f43f5e 50%, #f97316 100%);
-        }
-        .glass-card {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-    </style>
-</head>
-<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
-<header class="fixed top-0 w-full z-50 border-b border-slate-200/50 dark:border-slate-800/50 glass-card bg-white/70 dark:bg-black/70">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<img alt="DANGENIA Logo" class="h-10 w-10 rounded-full shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0v_JNtf0lmgDotyvDUqv4WC8HLtevy3HmdkAhfbRR54OhbWNtKD7lezElz9kXxrvH9n6tYdH3Ew0dpEII4CAfPe6qlu88KtZQgHKWQ3PhmkLHqkE-5HLRG_Wf0knquXB6Z88knJgb7qFJQPlFO2C5nJoKLIlEqkn9oBc1M3aB_UrqKN1fnffSVRhQmwtXJ9_UlTaXYPJtgthckZTu09nWGrmTKrzV1xPl62W0xfWSkM5YXM3GJv8LjfvUQ26yNx0UWMEkMEPf"/>
-<span class="text-xl font-extrabold tracking-tighter uppercase">DANGENIA</span>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Música</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">TikTok</a>
-<a class="text-sm font-bold text-primary" href="#">Contrataciones</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-icons-round text-xl leading-none">dark_mode</span>
-</button>
-<a class="bg-primary hover:opacity-90 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 transition-all" href="#whatsapp">
-                    Reservar ahora
-                </a>
-</div>
-</div>
-</header>
-<main class="pt-32 pb-20">
-<section class="max-w-7xl mx-auto px-6 text-center mb-24">
-<span class="inline-block py-1 px-4 rounded-full bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">Booking Oficial</span>
-<h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">Lleva la energía de <span class="text-transparent bg-clip-text logo-gradient">DANGENIA</span> a tu evento</h1>
-<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Experiencias musicales de alto impacto diseñadas para festivales, clubes y eventos privados exclusivos. Calidad sonora y presencia escénica de primer nivel.
-            </p>
-<div class="flex flex-wrap justify-center gap-4">
-<a class="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-black font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform" href="#contacto">
-                    Solicitar Presupuesto
-                </a>
-<a class="px-8 py-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" href="#servicios">
-                    Ver Servicios
-                </a>
-</div>
-</section>
-<section class="max-w-7xl mx-auto px-6 mb-32" id="servicios">
-<div class="grid md:grid-cols-3 gap-8">
-<div class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all group">
-<div class="h-14 w-14 rounded-2xl logo-gradient flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-<span class="material-icons-round text-3xl">festival</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Festivales y Clubes</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Set enérgico adaptado a grandes audiencias. Mezcla curada de éxitos propios y tendencias de TikTok que garantizan el movimiento del público.
-                    </p>
-<ul class="space-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
-<li class="flex items-center gap-2"><span class="material-icons-round text-primary text-sm">check_circle</span> Rider técnico profesional</li>
-<li class="flex items-center gap-2"><span class="material-icons-round text-primary text-sm">check_circle</span> Formato Live / DJ Set</li>
-</ul>
-</div>
-<div class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all group">
-<div class="h-14 w-14 rounded-2xl logo-gradient flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-<span class="material-icons-round text-3xl">star</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Eventos Privados</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Exclusividad para bodas, aniversarios o eventos corporativos de alto nivel. Un show íntimo pero con la potencia característica de DANGENIA.
-                    </p>
-<ul class="space-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
-<li class="flex items-center gap-2"><span class="material-icons-round text-primary text-sm">check_circle</span> Personalización del repertorio</li>
-<li class="flex items-center gap-2"><span class="material-icons-round text-primary text-sm">check_circle</span> Meet &amp; Greet incluido</li>
-</ul>
-</div>
-<div class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all group">
-<div class="h-14 w-14 rounded-2xl logo-gradient flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-<span class="material-icons-round text-3xl">campaign</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Brand Presence</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        Lanzamientos de marca y activaciones publicitarias. Integración de la imagen del artista con la marca para impacto en redes sociales.
-                    </p>
-<ul class="space-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
-<li class="flex items-center gap-2"><span class="material-icons-round text-primary text-sm">check_circle</span> Promoción en TikTok/IG</li>
-<li class="flex items-center gap-2"><span class="material-icons-round text-primary text-sm">check_circle</span> Creación de contenido original</li>
-</ul>
-</div>
-</div>
-</section>
-<section class="max-w-4xl mx-auto px-6" id="contacto">
-<div class="relative overflow-hidden rounded-[3rem] bg-slate-900 dark:bg-slate-800 text-white p-12 md:p-20 text-center">
-<div class="absolute -top-24 -right-24 w-64 h-64 logo-gradient rounded-full blur-[100px] opacity-20"></div>
-<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500 rounded-full blur-[100px] opacity-10"></div>
-<div class="relative z-10">
-<h2 class="text-4xl md:text-5xl font-bold mb-8">¿Listo para el siguiente nivel?</h2>
-<p class="text-slate-300 mb-12 text-lg max-w-xl mx-auto">
-                        Nuestro equipo de gestión te responderá en menos de 24 horas para coordinar los detalles de tu evento.
-                    </p>
-<div class="flex flex-col items-center gap-6" id="whatsapp">
-<a class="group flex items-center gap-4 bg-[#25D366] hover:bg-[#20ba5a] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all hover:scale-105 shadow-2xl shadow-green-500/20" href="https://wa.me/yournumber">
-<img alt="WhatsApp Icon" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVQxm-kCuwB1-9KB-vSm95jAHaSA7Mox3k7u36srIUlj-6iYCIFUxEMjuyJ_8q30J0q1p_cmhXxCfLAYf62qOx5zgJlCFEv6HOPLJWNuCSAmE1yVMb-6VqRkjO6aKXML8ZkBQRI8sfkU2dLctI-RcPOrhTMhqfTm5TvSerSlt9-o24X2yC4GG4JEW1h3h1WfPilItgPGfHxKGnOgFLS798rINleSw8pTP03X2-KOVtRzfbUyYFrmI5xXBjCIudb6tkhoFb8IY7"/>
-                            Contactar vía WhatsApp
-                            <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-<p class="text-slate-400 text-sm flex items-center gap-2">
-<span class="material-icons-round text-xs">verified</span>
-                            Canal oficial de contrataciones para DANGENIA
-                        </p>
-</div>
-<div class="mt-16 pt-16 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8">
-<div>
-<p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Disponibilidad</p>
-<p class="font-bold">Internacional</p>
-</div>
-<div>
-<p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Respuesta</p>
-<p class="font-bold">&lt; 24 horas</p>
-</div>
-<div>
-<p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Experiencia</p>
-<p class="font-bold">+100 Shows</p>
-</div>
-<div>
-<p class="text-xs uppercase tracking-widest text-slate-500 mb-2">TikTok</p>
-<p class="font-bold">Verificado</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="border-t border-slate-200 dark:border-slate-800 py-12">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-3">
-<img alt="DANGENIA Mini" class="h-6 w-6 rounded-full opacity-50 grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCC_KGp_4y9BA4ystDeNP33eUmUN01gT1wFBZf46g6LO58w3oPFAAFBOyeNXrDmdg711JpDuyp1NRoGyNxwZSzi-OLwBd8teMyCjw8YciUe-WrqYrQtp5rB9_atDlXzaFpvKNwxh1cLw0QcvjOEzm-E97--IJRVtWzQbqRLIihVRdC4OCYwIcWMuEO8eyCgNFE5N5WIZ9Kz-KRDi7xsQek5qyOTOFfqyuwPKtbNc65Kgi5wJtgj96w_Qt3s8asbQ22yw3YgP9J"/>
-<span class="text-sm font-bold text-slate-400 uppercase tracking-tighter">DANGENIA © 2024</span>
-</div>
-<div class="flex items-center gap-6">
-<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-icons-round">music_note</span></a>
-<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-icons-round">video_library</span></a>
-<a class="text-slate-500 hover:text-primary transition-colors" href="#"><span class="material-icons-round">alternate_email</span></a>
-</div>
-<p class="text-sm text-slate-500">Diseñado para el ritmo del futuro.</p>
-</div>
-</footer>
-<script>
-        // Simple dark mode toggle persistence can be added here if needed
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-    </script>
 
-</body></html>
+    <style>
+      .logo-gradient {
+        background: linear-gradient(135deg, #d946ef 0%, #f43f5e 50%, #f97316 100%);
+      }
+      .glass-card {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #d946ef, #f43f5e, #fb923c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- HEADER / NAV -->
+    <header
+      class="fixed top-0 w-full z-50 border-b border-slate-200/50 dark:border-slate-800/50 glass-card bg-white/70 dark:bg-black/70"
+    >
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a class="flex items-center gap-3" href="index.html">
+          <img
+            alt="DANGENIA Logo"
+            class="h-10 w-10 rounded-full shadow-lg"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0v_JNtf0lmgDotyvDUqv4WC8HLtevy3HmdkAhfbRR54OhbWNtKD7lezElz9kXxrvH9n6tYdH3Ew0dpEII4CAfPe6qlu88KtZQgHKWQ3PhmkLHqkE-5HLRG_Wf0knquXB6Z88knJgb7qFJQPlFO2C5nJoKLIlEqkn9oBc1M3aB_UrqKN1fnffSVRhQmwtXJ9_UlTaXYPJtgthckZTu09nWGrmTKrzV1xPl62W0xfWSkM5YXM3GJv8LjfvUQ26yNx0UWMEkMEPf"
+          />
+          <span class="text-xl font-extrabold tracking-tighter uppercase">DANGENIA</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-widest">
+          <a class="hover:text-primary transition-colors" href="index.html">Inicio</a>
+          <a class="hover:text-primary transition-colors" href="sobremi.html">Sobre mí</a>
+          <a class="hover:text-primary transition-colors" href="videos.html">Videos</a>
+          <a class="hover:text-primary transition-colors" href="musica.html">Música</a>
+          <a class="text-primary font-extrabold" href="contrataciones.html">Contrataciones</a>
+
+          <!-- Toggle Dark -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            type="button"
+            aria-label="Cambiar tema"
+          >
+            <span class="material-icons-round text-xl block dark:hidden">dark_mode</span>
+            <span class="material-icons-round text-xl hidden dark:block">light_mode</span>
+          </button>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a
+            class="bg-primary hover:opacity-90 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/20 transition-all"
+            href="#contacto"
+          >
+            Reservar ahora
+          </a>
+          <button class="md:hidden p-2" aria-label="Abrir menú">
+            <span class="material-icons-round text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-32 pb-20">
+      <!-- HERO -->
+      <section class="max-w-7xl mx-auto px-6 text-center mb-24">
+        <span
+          class="inline-block py-1 px-4 rounded-full bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6"
+          >Booking Oficial</span
+        >
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+          Lleva la energía de
+          <span class="text-transparent bg-clip-text logo-gradient">DANGENIA</span> a tu evento
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Experiencias musicales de alto impacto diseñadas para festivales, clubes y eventos privados exclusivos.
+          Calidad sonora y presencia escénica de primer nivel.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            class="px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-black font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform"
+            href="#contacto"
+          >
+            Solicitar Presupuesto
+          </a>
+          <a
+            class="px-8 py-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            href="#servicios"
+          >
+            Ver Servicios
+          </a>
+        </div>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section class="max-w-7xl mx-auto px-6 mb-32" id="servicios">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all group"
+          >
+            <div
+              class="h-14 w-14 rounded-2xl logo-gradient flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-icons-round text-3xl">festival</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Festivales y Clubes</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              Set enérgico adaptado a grandes audiencias. Mezcla curada de éxitos y tendencias que garantizan el
+              movimiento del público.
+            </p>
+            <ul class="space-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+              <li class="flex items-center gap-2">
+                <span class="material-icons-round text-primary text-sm">check_circle</span> Rider técnico profesional
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-icons-round text-primary text-sm">check_circle</span> Formato Live / DJ Set
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all group"
+          >
+            <div
+              class="h-14 w-14 rounded-2xl logo-gradient flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-icons-round text-3xl">star</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Eventos Privados</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              Exclusividad para bodas, aniversarios o eventos corporativos de alto nivel. Un show íntimo con potencia y
+              elegancia.
+            </p>
+            <ul class="space-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+              <li class="flex items-center gap-2">
+                <span class="material-icons-round text-primary text-sm">check_circle</span> Personalización del repertorio
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-icons-round text-primary text-sm">check_circle</span> Meet &amp; Greet incluido
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all group"
+          >
+            <div
+              class="h-14 w-14 rounded-2xl logo-gradient flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-icons-round text-3xl">campaign</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Brand Presence</h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              Lanzamientos de marca y activaciones publicitarias. Integración del artista con la marca para impacto en redes.
+            </p>
+            <ul class="space-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+              <li class="flex items-center gap-2">
+                <span class="material-icons-round text-primary text-sm">check_circle</span> Promoción en TikTok/IG
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-icons-round text-primary text-sm">check_circle</span> Creación de contenido original
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO / WHATSAPP -->
+      <section class="max-w-4xl mx-auto px-6" id="contacto">
+        <div class="relative overflow-hidden rounded-[3rem] bg-slate-900 dark:bg-slate-800 text-white p-12 md:p-20 text-center">
+          <div class="absolute -top-24 -right-24 w-64 h-64 logo-gradient rounded-full blur-[100px] opacity-20"></div>
+          <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500 rounded-full blur-[100px] opacity-10"></div>
+
+          <div class="relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">¿Listo para el siguiente nivel?</h2>
+            <p class="text-slate-300 mb-12 text-lg max-w-xl mx-auto">
+              Nuestro equipo de gestión te responderá en menos de 24 horas para coordinar los detalles de tu evento.
+            </p>
+
+            <!-- CAMBIA TU NUMERO AQUI (solo numeros, sin +) -->
+            <!-- Ejemplo Perú: 51956946335 -->
+            <div class="flex flex-col items-center gap-6" id="whatsapp">
+              <a
+                class="group flex items-center gap-4 bg-[#25D366] hover:bg-[#20ba5a] text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all hover:scale-105 shadow-2xl shadow-green-500/20"
+                href="https://wa.me/51TU_NUMERO?text=Hola%20DANGENIA%2C%20quiero%20cotizar%20una%20presentaci%C3%B3n"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  alt="WhatsApp Icon"
+                  class="w-8 h-8"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVQxm-kCuwB1-9KB-vSm95jAHaSA7Mox3k7u36srIUlj-6iYCIFUxEMjuyJ_8q30J0q1p_cmhXxCfLAYf62qOx5zgJlCFEv6HOPLJWNuCSAmE1yVMb-6VqRkjO6aKXML8ZkBQRI8sfkU2dLctI-RcPOrhTMhqfTm5TvSerSlt9-o24X2yC4GG4JEW1h3h1WfPilItgPGfHxKGnOgFLS798rINleSw8pTP03X2-KOVtRzfbUyYFrmI5xXBjCIudb6tkhoFb8IY7"
+                />
+                Contactar vía WhatsApp
+                <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </a>
+
+              <p class="text-slate-400 text-sm flex items-center gap-2">
+                <span class="material-icons-round text-xs">verified</span>
+                Canal oficial de contrataciones para DANGENIA
+              </p>
+            </div>
+
+            <div class="mt-16 pt-16 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Disponibilidad</p>
+                <p class="font-bold">Internacional</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Respuesta</p>
+                <p class="font-bold">&lt; 24 horas</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">Experiencia</p>
+                <p class="font-bold">+100 Shows</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">TikTok</p>
+                <p class="font-bold">Verificado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-12">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+          <img
+            alt="DANGENIA Mini"
+            class="h-6 w-6 rounded-full opacity-50 grayscale hover:grayscale-0 transition-all"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCC_KGp_4y9BA4ystDeNP33eUmUN01gT1wFBZf46g6LO58w3oPFAAFBOyeNXrDmdg711JpDuyp1NRoGyNxwZSzi-OLwBd8teMyCjw8YciUe-WrqYrQtp5rB9_atDlXzaFpvKNwxh1cLw0QcvjOEzm-E97--IJRVtWzQbqRLIihVRdC4OCYwIcWMuEO8eyCgNFE5N5WIZ9Kz-KRDi7xsQek5qyOTOFfqyuwPKtbNc65Kgi5wJtgj96w_Qt3s8asbQ22yw3YgP9J"
+          />
+          <span class="text-sm font-bold text-slate-400 uppercase tracking-tighter">DANGENIA © 2024</span>
+        </div>
+
+        <div class="flex items-center gap-6 text-sm font-semibold">
+          <a class="text-slate-500 hover:text-primary transition-colors" href="index.html">Inicio</a>
+          <a class="text-slate-500 hover:text-primary transition-colors" href="sobremi.html">Sobre mí</a>
+          <a class="text-slate-500 hover:text-primary transition-colors" href="musica.html">Música</a>
+          <a class="text-slate-500 hover:text-primary transition-colors" href="videos.html">Videos</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a
+            class="text-slate-500 hover:text-primary transition-colors"
+            href="musica.html"
+            aria-label="Música"
+            title="Música"
+          >
+            <span class="material-icons-round">music_note</span>
+          </a>
+          <a
+            class="text-slate-500 hover:text-primary transition-colors"
+            href="videos.html"
+            aria-label="Videos"
+            title="Videos"
+          >
+            <span class="material-icons-round">video_library</span>
+          </a>
+          <a
+            class="text-slate-500 hover:text-primary transition-colors"
+            href="contrataciones.html#contacto"
+            aria-label="Contacto"
+            title="Contacto"
+          >
+            <span class="material-icons-round">alternate_email</span>
+          </a>
+        </div>
+
+        <p class="text-sm text-slate-500">Diseñado para el ritmo del futuro.</p>
+      </div>
+    </footer>
+
+    <script>
+      // THEME: carga + toggle (localStorage)
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const root = document.documentElement;
+
+      function applyTheme() {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          root.classList.add("dark");
+        } else {
+          root.classList.remove("dark");
+        }
+      }
+
+      applyTheme();
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+          if (root.classList.contains("dark")) {
+            root.classList.remove("dark");
+            localStorage.theme = "light";
+          } else {
+            root.classList.add("dark");
+            localStorage.theme = "dark";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

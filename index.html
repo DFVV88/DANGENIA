@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DANGENIA - Inicio | Sitio Oficial</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=Outfit:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ff4d6d",
+              "background-light": "#ffffff",
+              "background-dark": "#0a0a0b",
+            },
+            fontFamily: {
+              display: ["Outfit", "sans-serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        .gradient-text {
+            background: linear-gradient(90deg, #d946ef, #f43f5e, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #d946ef 0%, #f43f5e 50%, #fb923c 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .video-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .video-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+<nav class="fixed top-0 w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="DANGENIA Logo" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp90O_f0ztJyadv3HNTwB911RgEnrLdocC0V1F80ZdVsGLJROmj9ci00o14off82fqcivgELFsPBntoM1kbQQtVNbE0A_VFunsjBQIZ4o_G_oS-c4Fz1TLj8P9bJpgI0QHKn5KUtTBdDMGq-odM9YlEmTrKn_aGHGbnMRRCHQAjsCcJnQzHwJbBXbggs5GO9GS9EQDy7qaGNskb5eZKOiFRzzNsQ97upbSVHUpaYbZiOAEKnaG5-SN3Y0eTtkPLkIbxZAOIyTa"/>
+<span class="font-display font-black text-2xl tracking-tighter">DANGENIA</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-medium text-sm uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#inicio">Inicio</a>
+<a class="hover:text-primary transition-colors" href="#sobre-mi">Sobre mí</a>
+<a class="hover:text-primary transition-colors" href="#videos">Videos</a>
+<a class="hover:text-primary transition-colors" href="#musica">Música</a>
+<a class="px-5 py-2.5 bg-primary text-white rounded-full hover:shadow-[0_0_20px_rgba(255,77,109,0.4)] transition-all" href="#contacto">Contrataciones</a>
+</div>
+<button class="md:hidden text-3xl">
+<span class="material-icons-round">menu</span>
+</button>
+</div>
+</nav>
+<section class="relative pt-32 pb-20 md:pt-52 md:pb-40 overflow-hidden" id="inicio">
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] -z-10"></div>
+<div class="max-w-7xl mx-auto px-6 text-center">
+<h1 class="font-display font-black text-7xl md:text-9xl mb-6 tracking-tighter animate-fade-in">
+                DAN<span class="gradient-text">GENIA</span>
+</h1>
+<p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-12 italic">
+                "Donde el alma encuentra su ritmo y las emociones se vuelven melodía."
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4">
+<a class="group flex items-center gap-2 px-8 py-4 bg-white dark:bg-white/10 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 rounded-full font-bold hover:scale-105 transition-all" href="#videos">
+<span class="material-icons-round text-primary">play_circle</span>
+                    Ver TikTok
+                </a>
+<a class="flex items-center gap-2 px-8 py-4 gradient-bg text-white rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all" href="#musica">
+<span class="material-icons-round">music_note</span>
+                    Escuchar música
+                </a>
+<a class="flex items-center gap-2 px-8 py-4 bg-slate-900 dark:bg-slate-800 text-white rounded-full font-bold hover:scale-105 transition-all" href="#contacto">
+<span class="material-icons-round">mail</span>
+                    Contrataciones
+                </a>
+</div>
+</div>
+</section>
+<section class="py-20 bg-slate-50 dark:bg-white/[0.02]" id="videos">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Contenido Viral</h2>
+<h3 class="text-4xl font-display font-bold">Últimos Videos</h3>
+</div>
+<a class="text-slate-500 hover:text-primary flex items-center gap-1 font-semibold transition-colors" href="#">
+                    Seguir en TikTok
+                    <span class="material-icons-round">arrow_forward</span>
+</a>
+</div>
+<div class="video-container flex overflow-x-auto gap-6 pb-8 snap-x">
+<div class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start">
+<img alt="Video performance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHiEJTsx7do9RLqbDsKaChgwEcBZ1XXhUQGFUbrifsSH8C2_7lEuNmeZv6xk70kuoKcpTeBv5RPTBQUM57PpXzZgjqv7HP_uu4Ai9NztzNbmSW9JNgh4n_f2TorRohbQlpUfIlUSHhfyDMdEZwpcvJEaefZFNAbHs6_C-tbL14ili14UbLFCrJKF8s8RNfbjnAdDj21M95-Nv2wE6-9HX0KLgH5voFqUiyb2CI8CWJCX1EVgDeF-7C6mD1KWaNRCX1K1IKPnEW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6">
+<p class="text-white font-bold flex items-center gap-2">
+<span class="material-icons-round text-primary text-sm">favorite</span>
+                            12.4K
+                        </p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons-round text-6xl text-white">play_arrow</span>
+</div>
+</div>
+<div class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start">
+<img alt="Music studio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBicJMteOph1aD5EPgE8bcwM16rJuh2zkftiNwXWHF7hvVzFnqCvat_z5kyPutXE5Y5lWmKB8wIZ1KieZBr_Kx2FzNYYMleKfTe6EO7ORmXyZh8xPyrqr_dRXi1UQdD-32Kraf5h9T9GBIOtvY42S-qjtBlW_IKNZH7JDclRNhN9mVFJm3udW3PVJDA01w7hC2NLw32wFPvg878Il2lTrJiyYU6UfS5SiUPCKnX4kLyyVCGIxJBKVPoL5Vl95Hqvfz5CcXrsa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6">
+<p class="text-white font-bold flex items-center gap-2">
+<span class="material-icons-round text-primary text-sm">favorite</span>
+                            8.9K
+                        </p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons-round text-6xl text-white">play_arrow</span>
+</div>
+</div>
+<div class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start">
+<img alt="Live concert" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYv5p5G5-OXwFSwVW3UD5AWapmX-OizfpL6UC4WNSbeTpVVsHXX2-L9xg-qmQb58YKLFqNBU_oo0TUYIYuCLAk6WylSWVU4CXXdd7OQnNDo9894uAE-UGeqT87ttT75PMCpGV2C762j_5XVboTXavBEXo6DYaXauPUXWwNPyvjG4kyw3f3xFV1Cf0ZMhwnn_BoUybiPrrb_-d0UaHI_XMeSu5TInTNsYsK_E814E93glxPwCUJrH3SFQ3Wjb0DL7b6ClNykwNN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6">
+<p class="text-white font-bold flex items-center gap-2">
+<span class="material-icons-round text-primary text-sm">favorite</span>
+                            25.2K
+                        </p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons-round text-6xl text-white">play_arrow</span>
+</div>
+</div>
+<div class="flex-none w-64 md:w-80 aspect-[9/16] relative rounded-3xl overflow-hidden group snap-start">
+<img alt="Acoustic session" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd6sqnk9mkFZToIWcZiYxC0XaxyKvE4aIOamKL3zmwqvWWtZQF51XTN-hpdJOUDjfCBOESGZTOXY6SgVjUROJQFt9U2alAQKIpFvGsItPeRq0-tGixvx2jBvmnjBsE4vtswH1u2910SphZ6kIdbOiwLDPoR_uVZ_7SYMAgo7faJLGfSTFsO1fcNVojVKFphlEcNZoe55RCXouDsB2UI6MHiTHZ1X4pQGmE1LNwRGJO0_YpuOpRMA5OdQWoUGpJ2s_RPbyxqb8R"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-6 left-6">
+<p class="text-white font-bold flex items-center gap-2">
+<span class="material-icons-round text-primary text-sm">favorite</span>
+                            15.1K
+                        </p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons-round text-6xl text-white">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24" id="sobre-mi">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16">
+<div class="relative">
+<div class="absolute inset-0 gradient-bg blur-[100px] opacity-20 -z-10"></div>
+<img alt="DANGENIA Portrait" class="rounded-[2.5rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_-Gy2u4Jsa9mJLloUYPgQHrZRWc72j3NIWUzo5wYOZT4qiqADELiUDZ6qOf8p66xi0_e1pk-eHtKinLTfGsmBA6N_9Pyu506AV4FnX3bPqmSrrJfYNoMGWF_T6G_u6VgCz6616m1kbF7TrDvEnAkj69XNvpAEJQwkDiAk-PoOLR5ec9jQGy4wSFlarIAsG09gF_4tyhsEQm1_HP4rvzhj39yF66sNad8tR4I7fNyhHEtaF5lZpl6A5O7G678_icglyW7ACpKZ"/>
+<div class="absolute -bottom-8 -right-8 glass-card p-8 rounded-3xl max-w-[240px]">
+<p class="font-display font-bold text-lg mb-1">DANGENIA</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Creador de atmósferas musicales y momentos inolvidables.</p>
+</div>
+</div>
+<div>
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Sobre mí</h2>
+<h3 class="text-5xl font-display font-black mb-8 leading-tight">Cantar es mi forma de <span class="gradient-text">conectarme contigo.</span></h3>
+<div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+<p>
+                        Hola, soy DANGENIA. Mi música no es solo sonido; es un viaje por las historias que todos vivimos pero a veces no sabemos cómo contar. 
+                    </p>
+<p>
+                        Desde que empecé en TikTok, mi meta ha sido crear un espacio donde la autenticidad sea la protagonista. Cada nota y cada verso están pensados para que sientas que no estás solo en este camino.
+                    </p>
+<div class="flex gap-6 pt-6">
+<div>
+<p class="text-3xl font-display font-bold text-slate-900 dark:text-white">500K+</p>
+<p class="text-sm">Seguidores</p>
+</div>
+<div class="w-px h-12 bg-slate-200 dark:bg-white/10"></div>
+<div>
+<p class="text-3xl font-display font-bold text-slate-900 dark:text-white">5M+</p>
+<p class="text-sm">Likes</p>
+</div>
+<div class="w-px h-12 bg-slate-200 dark:bg-white/10"></div>
+<div>
+<p class="text-3xl font-display font-bold text-slate-900 dark:text-white">100+</p>
+<p class="text-sm">Shows</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-slate-900 text-white overflow-hidden relative" id="musica">
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="text-center mb-16">
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Discografía</h2>
+<h3 class="text-5xl font-display font-bold">Nuevos Lanzamientos</h3>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="glass-card p-6 rounded-[2rem] hover:bg-white/10 transition-colors group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6">
+<img alt="Album Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbU6CQZgyRkM_Ff-y8YBUnupcLnyOh6_TAoYtL-RIlcqEnwijzid35RzTSLBxgTenaAhKMjNzebxMk7WznrLBPpChWMn1ALLop7Yutp_DxXHWEpMex6sdauS3BUKjVuxwsWJYgjoRVy206lR7hU1mLCxoMm_1nminoIBloErff-WtT7zDWiM2mqGvhpkcUekyZSPK0_80xwjjT0iz1HO2b4akMRBoV3MJCvyDDP4542JEJxO79vxB9Zn1AyzZ6WHwXf15AnHyF"/>
+</div>
+<h4 class="text-xl font-bold mb-1">Ecos del Alma</h4>
+<p class="text-slate-400 mb-6 text-sm italic">Single • 2024</p>
+<button class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors">
+<span class="material-icons-round">play_arrow</span>
+                        Reproducir ahora
+                    </button>
+</div>
+<div class="glass-card p-6 rounded-[2rem] hover:bg-white/10 transition-colors group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6">
+<img alt="Album Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpb-pcRPQ83CFAlFE9omNiA2-t-F1tLp6BSeqpjhbhAmqYAUfA088fExnEmaKQTXNLcgE7N_j5ownn_SAjzi2Otw26cIddsh9sziGKytdVgfPPbXIbJA-oxMqowTwBO66AFa-sh1sOgAkt9wZZ6UEjBLGfzv92DjoNokai00HJGwDlFXQc0mZVm7v3J_-bpLiXq9GmZCb_Wk5m7Gh9_L8JBD-QOfbijxOpiVI3mZkVaO3A9syG_XlOHxiZgeiLs3QXZxgDeeel"/>
+</div>
+<h4 class="text-xl font-bold mb-1">Luces Nocturnas</h4>
+<p class="text-slate-400 mb-6 text-sm italic">EP • 2023</p>
+<button class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors">
+<span class="material-icons-round">play_arrow</span>
+                        Reproducir ahora
+                    </button>
+</div>
+<div class="glass-card p-6 rounded-[2rem] hover:bg-white/10 transition-colors group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6">
+<img alt="Album Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOtmIaAjTrIsvgJppmMx8BTI-U9oDXK0X49seyloxtL04rV0_ShfhQQZCn8GGkPCxdD8hbn5yHVjx4lNI1nyDm0QbUbKGezf6xbtz8TJrKipgZLdg6PxSvNp32wqBUdtPTxlcW0ygKpOcXuv98j8xGhsLF4Eq3YERx4J7GJBmUVWLQH5vjVKwDakL9GasnTbNotBo9xuplXmAjGSrZsXgJNrIsKSS0nEqKJKrGopwN72nmFZWXs2tLxd3ldMIiTJVIzUzpZ3L0"/>
+</div>
+<h4 class="text-xl font-bold mb-1">Sin Mirar Atrás</h4>
+<p class="text-slate-400 mb-6 text-sm italic">Single • 2023</p>
+<button class="w-full py-3 bg-white text-slate-900 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors">
+<span class="material-icons-round">play_arrow</span>
+                        Reproducir ahora
+                    </button>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-32 opacity-10">
+<span class="material-icons-round text-[300px]">album</span>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark" id="contacto">
+<div class="max-w-4xl mx-auto px-6">
+<div class="bg-slate-100 dark:bg-white/[0.03] p-10 md:p-16 rounded-[3rem] border border-slate-200 dark:border-white/10">
+<div class="text-center mb-12">
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Contacto</h2>
+<h3 class="text-5xl font-display font-bold">Llevemos el show a tu ciudad</h3>
+<p class="mt-4 text-slate-600 dark:text-slate-400">Disponible para eventos, festivales y colaboraciones de marca.</p>
+</div>
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-semibold mb-2 ml-1">Nombre completo</label>
+<input class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2 ml-1">Email</label>
+<input class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="email@ejemplo.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2 ml-1">Tipo de evento</label>
+<select class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none">
+<option>Festival / Concierto</option>
+<option>Evento Privado</option>
+<option>Colaboración Digital</option>
+<option>Prensa / Entrevista</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2 ml-1">Mensaje</label>
+<textarea class="w-full px-6 py-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Cuéntanos más sobre tu propuesta..." rows="4"></textarea>
+</div>
+<button class="w-full py-5 gradient-bg text-white font-bold rounded-2xl hover:shadow-[0_0_30px_rgba(244,63,94,0.3)] hover:scale-[1.02] transition-all" type="submit">
+                        Enviar Propuesta
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<footer class="py-12 border-t border-slate-200 dark:border-white/10">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-3">
+<img alt="DANGENIA Logo" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnNwkKdyifzHE_lzJZLzOq1u4uJkSNjnBp8fTetQlmUrT2FoKt09jlxt_DR-ha7Gd4-nykZFVWSahXZmcfXnfBudKoDv8Mm6OLTFekwAtL6PtSuNPEtQM5EyGagE3AfSPWp3aeS9dQrY58IDjXlqJ0DHHK8rrBfGlpFPkqCZY-aRiilo4JHYHkKHyNeQec5RNL2LRFhe9UKy3WRQNxlWv1VJLOVcvm-ZKryx_4wuhAuRslGVVbkH-tUmWXudrsehPN4oMmHHv3"/>
+<span class="font-display font-black text-xl tracking-tighter">DANGENIA</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                © 2024 DANGENIA. Todos los derechos reservados.
+            </p>
+<div class="flex items-center gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<img alt="TikTok" class="w-6 h-6 dark:invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQzvMgphUwf4mLZER6jN9NUQdji3mRlk_x-NiZDIikMhd-1lU9LR-Sgk4zHcC1mJYuYbHfGAHD5L_XM7IS3W7hrmoNcp0sXStpHc3HALrSOtp5yq6qFAdJxzhBstrZOMiIj9Wh1AfRuq2NoNvUzAE6wyb9jKODXEJwWVMr6PxK8n_JrUmo_6RF2U8qiDzYnOvJ5JanJy_Dw54zv7NXeZ5idNw1Ys5vAVrEFXglIk2bnWYFb31pEYedt9bZlPWaY15yP96Kxqnu"/>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<img alt="Instagram" class="w-6 h-6 dark:invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6qFNChc4VCJxkkMQOj2DCWiPdoCBNIE2EVFu6TozC_lGLRk7X8KimzSHUcoJ36HiFpefDAH1GyCDjKPUm-58iTEMoMOHNzACAoz7jO9zOHWe3lDkdFgWV1kyfl7KifK7Rycrd5nTuNTutaPKDkShVCLThfAp3pcZMm8kku4itSmOAQJ4rF6Ek1ElNrbb4y8NXnpMtt5qxsNB0e19XhqpKnb0Ib_Xj_dr_7GL8FVbreXLtg4pjzdpHONjIlP1AauhQABFVh1VP"/>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<img alt="YouTube" class="w-6 h-6 dark:invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFQTo-qyG0qvr08vMFGca0IVcdviiPDjt208r4HaXMJ_ljsQyEn7zVDOnOOhfreXxqoIgnb5iSeoWcIdvEwhxzMp4WCQIxm0Tg0gz9RXZOtLvcUk3lLOauTima4SiZFOkbmEgN9vO2afaxfCf6X9ZcSVe9am8T6CEp9XPeFNVa3Plg8yhy18VWs1TzFWpqDb5lAfMAMLQHEJ1pCJtiiwCtead1nd-wLb9tSiy9i6AnoI3Pb2R2_rtWi60TapXmoY35Na6piw5q"/>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<img alt="Spotify" class="w-6 h-6 dark:invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9TZ8tiJZNWuVIKDNVOYeF16gEESXylLeYC-mHSzx3rAHLAZRubFjbYivvdpJq7ZohFo6vH32HoXhlYPEmOUc3WzcDRZVUJLsYWKVC2iWuCTjNW4akag8nEMQeHCf5y2pVugA729ltw-x4lfUnlWPQT6EcJZEqd_dxTiwuHxdSzvgEUMwbu8YDHkfOQ_tCjNFSuuMmVdFu4uwRrV5DCxJfDjtL16hJdyqklO7pbjh4QfiEWDZLdI-zk0iWlV2qftyt1qeDUxRJ"/>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // Sticky header opacity on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+        // Set dark mode as default for the "elegant dark background" request
+        document.documentElement.classList.add('dark');
+    </script>
+
+</body></html>

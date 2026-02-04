@@ -1,342 +1,409 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>DANGENIA - Videos Musicales</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=Outfit:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#f43f5e", // A vibrant pink from the logo
-              "background-light": "#ffffff",
-              "background-dark": "#0a0a0a",
-              accent: {
-                orange: "#f97316",
-                pink: "#ec4899",
-                purple: "#a855f7"
-              }
-            },
-            fontFamily: {
-              display: ["Outfit", "sans-serif"],
-              sans: ["Inter", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "12px",
-            },
+<html class="scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>DANGENIA - Videos Musicales</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;family=Outfit:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f43f5e",
+            "background-light": "#ffffff",
+            "background-dark": "#0a0a0a",
+            accent: {
+              orange: "#f97316",
+              pink: "#ec4899",
+              purple: "#a855f7"
+            }
+          },
+          fontFamily: {
+            display: ["Outfit", "sans-serif"],
+            sans: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "12px",
           },
         },
-      };
-    </script>
-<style>
-        .gradient-text {
-            background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
-        }
-        .video-card:hover .video-overlay {
-            opacity: 1;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
-<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-20">
-<div class="flex items-center gap-3">
-<img alt="DANGENIA Logo" class="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq0KW7y3kwRVAcrPLc-q6-2W5Nrxug0ZbVUOsSsTNZxDIag4-y2h1e5xKhUzR8BtKN8QBrYIUfTIvh2JcEgfzSwOdf-_eKak5F2Z7-SPm38YgmbTlKBrwlXKfAFCq6-Z8O-NI4R7qeUG6z7RvhVEu1pYvVkz9RJP0yzHeV1iFvByredzAf03CoqhQ2xB0ljiJysnFJqWALQOhSPVGZJnIvpkm544Io9-zxIZ7o_lvdD2X3lvnX6bKIjxUJqOzTnB8bIGnpfh_d"/>
-<span class="font-display font-black text-2xl tracking-tighter uppercase">DANGENIA</span>
-</div>
-<nav class="hidden md:flex items-center space-x-8">
-<a class="font-medium hover:text-primary transition-colors" href="#">Inicio</a>
-<a class="font-medium hover:text-primary transition-colors" href="#">Música</a>
-<a class="text-primary font-bold border-b-2 border-primary" href="#">Videos</a>
-<a class="font-medium hover:text-primary transition-colors" href="#">Gira</a>
-<a class="font-medium hover:text-primary transition-colors" href="#">Contacto</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" id="theme-toggle">
-<span class="material-icons-round text-2xl block dark:hidden">dark_mode</span>
-<span class="material-icons-round text-2xl hidden dark:block">light_mode</span>
-</button>
-<button class="md:hidden p-2">
-<span class="material-icons-round text-3xl">menu</span>
-</button>
-</div>
-</div>
-</div>
-</header>
-<main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-<div class="mb-12 text-center md:text-left">
-<h1 class="font-display font-black text-5xl md:text-7xl mb-4 gradient-text">VIDEOS</h1>
-<p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl">
-                Explora las últimas presentaciones, tras bambalinas y momentos exclusivos de DANGENIA. Una experiencia visual vertical diseñada para tu dispositivo.
-            </p>
-</div>
-<div class="flex gap-3 overflow-x-auto pb-4 mb-8 hide-scrollbar">
-<button class="px-6 py-2 rounded-full bg-primary text-white font-semibold whitespace-nowrap">Todos</button>
-<button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">Presentaciones</button>
-<button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">TikTok Highlights</button>
-<button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">Oficiales</button>
-<button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">Studio Sessions</button>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Video performance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiDfi0iNGpEL7WDM4_M52qAPJcDTqKcXjxjSk-CEnl8LO5KsikxPJVWwcH30LvlM6-grp-rsE6vbtzyL7OHbO5pOstnmhEQ4BhoCXyfma-VHdjH8HQn75ueXLadl0ZCzMxfVeWxRtgtVjwFRiCQKq8--Ra95uG-V4FLir28VQPDtAgJ-9nGEd-nWT099-tpCFvRfd_neiTglaZqhOhWDnJaDnk98Cf0rZLC2tvR26c9pWalvTdB-v5H8Ij7BNi2cIUja3dE77n"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Live en Madrid: "Eclipse"</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">play_circle</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">4.2M vistas</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Stage lights" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbaHmzdBXzTMmwJoO7brIlr64DsvTvNJtMMkZJm8BiODzpTGgdbd3T8wsfJ8vJEk9XWDuC4q2nOjSm5KyL3W2NkYw64kSeIHdUPzhVQRm4rJRZlFF9mX69iQpapPeffdkOpEWRxm_DJvgw6o6xsULw0616Lo25xASLoaAMXcwLwr0CYZQnB_71557GYSF2e6Bs0rX4HfxmZqSsZaT8DlErza7h2S8eT-0SSFndykd-zntaHCGi31lxDEyU2P5wpNMXLrkTMmP"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Detrás de Escena: Gira 2024</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">favorite</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">1.8M likes</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="DJ performance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnFotu2qjDC3c1saBBbaG2bKfRQcsL08F5S8-qrtbWlCbZz1En6-15JYqAxKHQJgwOHgAVnjrPERJ-2PI9BcZTbbtqgfrt3mU_jC_RS5XVZPaZGZjUFjBt99GQD3zVIAUOXMAtBPKfi92y23DOCJ-7IVvuWDq8hx_r9-Nq8sB2CnGfJXDwuLvbv_84FmMZI_bleK1iUsF1ep_JKFp8jSQ9sPActT0AkQdgFUtWoI7ULzmIUY4OZAjtfobG5e1DtYMEBsjtTQVZ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">New Remix Drop 🔥</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">share</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">Recién subido</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Singing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGzmwuE3Bc7CLWR-NECGn2B3c_IrHJ9yzpvbsAuejjJTYN35NYWU65QSIc1G44N-cwBUJQUiBNe2OQLDdtvVKnuUYYbsdpnesisegsscbp1RbAKhrxU_o-TGC6pflO5hetHblpJS4tp1-HLTuyaadKtNQJtS0umDJLWSk-8t2HfEa7w39yLo3J1eUwAZA0FSIFN8kSEdg-eE0XlBIT4kAg2JNSLxa3UEMX3OVBUs-pCjP3yP_nJsRqrcqMiwRuA5ar3LCXlD93"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Acoustic Session: "Nubes"</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">play_circle</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">500K vistas</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Stage" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPEoLs3rPSSeRzbtVNN6slI1eiXufClfIEPOSqdhNNbx_ihjR9I4z60YGLCBiefWdFC3fAzelEd3l0WiXOcPHq7AAcO1UIzqIGiKTv-uAM9IiwnD3gyu9Q2tI9y6od6on8xnyGHewX9iTSLcqdZNx_AxZ2HQj9s73b4NucykO1R_DHhkuihrllbbGapiqFdLSJMTH0mY0mjeUvwkMk7Yrh3Cb6wzHXOCZ9HNhbfQqqyR6CzyxhjzKY4oAjA8ZT2grJJPx8Xyig"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Tour Announcement 2025</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">event</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">Viral</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Concert audience" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1lR6D1fxdmaaBSKZhiApJ_V4HTTnl_EOvdbzIDF43Oara1TFP5z7KdliTeSTXRvDghHUI6H-YVDrCp31Vr5ziOm3ZMXSRp2lpF3XmerBcYB8wVKyWFU4rdPR2-Ae8yYWmg65Nmyr6cDciIZkaCXDhbP3vt7OplqHL3kaVBZJBnWvWt4N4LS3QYqpdt0i6TCL1uhjmnreqrft16Jvikd1UM1jadDAwHeTuvEdNmin-T7giU5rTf1vVtRRv9ihqC2PywvachgGw"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Festival Moments</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">visibility</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">2.1M</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Guitar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBigFDWEvFiWUfa39Nddvdl_K8yVaKr6q8hu_YUTDRStIKf81bt9v4nbvxEJK5QaSXzJ0_0HnmwUn2MJPjCut6pxaUyAQNSeJHgE4xUglNx3Lc8v9BqNobhmb3UjBl-3gk4WU7LJHmkDrULUzxRXNk88jvAXjK106skU2FHiS9HQHtTE-OQrl3Z1UwkUnbi38xTQ8b-dzNEfSI9uj19RCCOABQCIO1jcTnzTlEdvBv6qorw3idbV0JvCG6zFTLtl-39hs1ZblXE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Late Night Vibes</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">nights_stay</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">Exclusivo</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Stage wide" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH4uK6p2TFphFe9MWHChGqUTXE6U1f_EdROyjePl6UmhZPoAitTS93xMn7O68EQZa3Jiid6ZEsuNJ_1R19j1L-a8d_bQUERDf41_SNLJB01Cv0avDD3FOhWVtFoUacApkHg-jyVgMkxilShtyd8bDi_NqSlNW-Uh-PEQ6kfer0ZN1UQBDhxE_5kynVFFkKoYvMd2Ypbr20QwuPxID3aYKhSBniuyxWs5-qIl1MyCHRK1QRwMQy74rN4l6g-HLXnv2YAY_sCXqV"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Fan Meetup Vlog</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">groups</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">125K vistas</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Artist" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9j2lhRFG3Y-LOHNhKvOrcXhH-5voCXA6J2ytK9uskbV7pM1aI5MbdLUlbQFdo9O2MrQC8U0DCjY0o2D4AAcCoBVIE_XLDONJ5XA7O95jORDoEo0quyrJ8Uz4QmAN7s_9qiBhnxKrMmAvZZ9RLj7XwLG8JnBfOQ6h7DZAcozyCGkAflDaFMgjjLijR6bb68awpvyl1yKkcBM1t-p7hwPTrb8mnC67avVlHR0ZX3ij1kg7YuLJRlFm6Bs7iLU3rxa7O-vOADEAY"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Summer Jam 2024</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">wb_sunny</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">Trending</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-<div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
-<img alt="Recording" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy0bh8_OuuHHmUOugGhmWERq-xBs3XGq5PJAr1MDnSKOE6Se8R3jjVoXN-81UxbWSFeIS34zqkMB_76Yz86pmiVH62rz6spgT9PYJa7A5q2A-BHZRq_q4TYAnlp3QxPiTW1UeGF2TqW0BbREHmRFV0A1IBzVIpWfezpTJmJNOM022u9r-N3C5RrTX3QK3iY6FsW31JxviF2mV1cS39T1JrAIjd2dRYiJLegazWoq1jpec8VEDgmshos6wQXCa5a3yHvQhLxfRE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-<p class="font-bold text-sm leading-tight mb-1">Studio Bloopers 😂</p>
-<div class="flex items-center gap-2 opacity-80">
-<span class="material-icons-round text-xs text-primary">sentiment_very_satisfied</span>
-<span class="text-[10px] uppercase tracking-wider font-semibold">Funny</span>
-</div>
-</div>
-<div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
-<div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
-<span class="material-icons-round text-white text-3xl">play_arrow</span>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-16 text-center">
-<button class="group inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 border-slate-200 dark:border-slate-800 hover:border-primary transition-all duration-300">
-<span class="font-bold text-lg">Cargar más videos</span>
-<span class="material-icons-round group-hover:rotate-180 transition-transform duration-500">expand_more</span>
-</button>
-</div>
-</main>
-<footer class="bg-slate-50 dark:bg-zinc-950 pt-20 pb-10 border-t border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-<div class="col-span-1 md:col-span-2">
-<div class="flex items-center gap-3 mb-6">
-<img alt="DANGENIA Logo" class="w-12 h-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJv6QDsNINFtvrl6UIIhiPC99oFzdVQoM1EQXKiYFZeoJ4aAHnTHMz5G5w5NOeMcb8lQPHIlgPk2vEy5pV2JpR32O8xUW1h5jm9ou7OY4U5o8ZfDyyscaOVFPfU-vNkegKqXLI_lvdtw_wAwrxVLdNZeZl2F4GyED4oJ5eTANg5GAAoMNCLHZkUccrqDFznZzTpjmaxSURAnBoB8HHQDozs3ekyuLgTcW8dcUJ5J96MoOJpGCgahkv6EJdJnQ65yndMUzICE-T"/>
-<span class="font-display font-black text-3xl tracking-tighter uppercase">DANGENIA</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 max-w-sm mb-8">
-                        Llevando el sonido del futuro a cada rincón del mundo. Únete a la comunidad oficial y no te pierdas nada.
-                    </p>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-<i class="material-icons-round text-xl">camera_alt</i>
-</a>
-<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-<i class="material-icons-round text-xl">music_note</i>
-</a>
-<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-<i class="material-icons-round text-xl">play_arrow</i>
-</a>
-<a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-<i class="material-icons-round text-xl">public</i>
-</a>
-</div>
-</div>
-<div>
-<h4 class="font-bold mb-6 uppercase tracking-widest text-sm text-primary">Navegación</h4>
-<ul class="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
-<li><a class="hover:text-primary transition-colors" href="#">Sobre el Artista</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Discografía</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Próximos Shows</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Tienda Oficial</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-6 uppercase tracking-widest text-sm text-primary">Soporte</h4>
-<ul class="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
-<li><a class="hover:text-primary transition-colors" href="#">Newsletter</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Prensa</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
-</ul>
-</div>
-</div>
-<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-slate-500 dark:text-slate-500 text-sm">
-                    © 2024 DANGENIA. Todos los derechos reservados.
-                </p>
-<p class="text-slate-500 dark:text-slate-500 text-sm flex items-center gap-1">
-                    Diseñado con <span class="material-icons-round text-primary text-xs">favorite</span> para fans de todo el mundo.
-                </p>
-</div>
-</div>
-</footer>
-<script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        // Initial theme check
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        themeToggleBtn.addEventListener('click', () => {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
-            }
-        });
-    </script>
+      },
+    };
+  </script>
 
-</body></html>
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+    }
+    .video-card:hover .video-overlay {
+      opacity: 1;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+
+      <a href="index.html" class="flex items-center gap-3">
+        <img alt="DANGENIA Logo" class="w-10 h-10 rounded-full"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq0KW7y3kwRVAcrPLc-q6-2W5Nrxug0ZbVUOsSsTNZxDIag4-y2h1e5xKhUzR8BtKN8QBrYIUfTIvh2JcEgfzSwOdf-_eKak5F2Z7-SPm38YgmbTlKBrwlXKfAFCq6-Z8O-NI4R7qeUG6z7RvhVEu1pYvVkz9RJP0yzHeV1iFvByredzAf03CoqhQ2xB0ljiJysnFJqWALQOhSPVGZJnIvpkm544Io9-zxIZ7o_lvdD2X3lvnX6bKIjxUJqOzTnB8bIGnpfh_d"/>
+        <span class="font-display font-black text-2xl tracking-tighter uppercase">DANGENIA</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8">
+        <a class="font-medium hover:text-primary transition-colors" href="index.html">Inicio</a>
+        <a class="font-medium hover:text-primary transition-colors" href="musica.html">Música</a>
+        <a class="text-primary font-bold border-b-2 border-primary" href="videos.html" aria-current="page">Videos</a>
+        <a class="font-medium hover:text-primary transition-colors" href="sobremi.html">Sobre mí</a>
+        <a class="font-medium hover:text-primary transition-colors" href="contrataciones.html">Contacto</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" id="theme-toggle" aria-label="Cambiar tema">
+          <span class="material-icons-round text-2xl block dark:hidden">dark_mode</span>
+          <span class="material-icons-round text-2xl hidden dark:block">light_mode</span>
+        </button>
+
+        <a class="hidden sm:inline-flex px-5 py-2.5 rounded-full gradient-bg text-white font-bold hover:scale-105 transition-transform"
+           href="contrataciones.html">CONTRATACIONES</a>
+
+        <button class="md:hidden p-2" aria-label="Menú">
+          <span class="material-icons-round text-3xl">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+  <div class="mb-12 text-center md:text-left">
+    <h1 class="font-display font-black text-5xl md:text-7xl mb-4 gradient-text">VIDEOS</h1>
+    <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl">
+      Explora las últimas presentaciones, tras bambalinas y momentos exclusivos de DANGENIA.
+      Una experiencia visual vertical diseñada para tu dispositivo.
+    </p>
+  </div>
+
+  <div class="flex gap-3 overflow-x-auto pb-4 mb-8 hide-scrollbar">
+    <button class="px-6 py-2 rounded-full bg-primary text-white font-semibold whitespace-nowrap">Todos</button>
+    <button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">Presentaciones</button>
+    <button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">TikTok Highlights</button>
+    <button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">Oficiales</button>
+    <button class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors whitespace-nowrap">Studio Sessions</button>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+
+    <!-- CARD 1 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Video performance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiDfi0iNGpEL7WDM4_M52qAPJcDTqKcXjxjSk-CEnl8LO5KsikxPJVWwcH30LvlM6-grp-rsE6vbtzyL7OHbO5pOstnmhEQ4BhoCXyfma-VHdjH8HQn75ueXLadl0ZCzMxfVeWxRtgtVjwFRiCQKq8--Ra95uG-V4FLir28VQPDtAgJ-9nGEd-nWT099-tpCFvRfd_neiTglaZqhOhWDnJaDnk98Cf0rZLC2tvR26c9pWalvTdB-v5H8Ij7BNi2cIUja3dE77n"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Live en Madrid: "Eclipse"</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">play_circle</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">4.2M vistas</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Stage lights" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfbaHmzdBXzTMmwJoO7brIlr64DsvTvNJtMMkZJm8BiODzpTGgdbd3T8wsfJ8vJEk9XWDuC4q2nOjSm5KyL3W2NkYw64kSeIHdUPzhVQRm4rJRZlFF9mX69iQpapPeffdkOpEWRxm_DJvgw6o6xsULw0616Lo25xASLoaAMXcwLwr0CYZQnB_71557GYSF2e6Bs0rX4HfxmZqSsZaT8DlErza7h2S8eT-0SSFndykd-zntaHCGi31lxDEyU2P5wpNMXLrkTMmP"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Detrás de Escena: Gira 2024</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">favorite</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">1.8M likes</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="DJ performance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnFotu2qjDC3c1saBBbaG2bKfRQcsL08F5S8-qrtbWlCbZz1En6-15JYqAxKHQJgwOHgAVnjrPERJ-2PI9BcZTbbtqgfrt3mU_jC_RS5XVZPaZGZjUFjBt99GQD3zVIAUOXMAtBPKfi92y23DOCJ-7IVvuWDq8hx_r9-Nq8sB2CnGfJXDwuLvbv_84FmMZI_bleK1iUsF1ep_JKFp8jSQ9sPActT0AkQdgFUtWoI7ULzmIUY4OZAjtfobG5e1DtYMEBsjtTQVZ"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">New Remix Drop 🔥</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">share</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">Recién subido</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- (El resto de cards lo dejo igual que tu original para no cambiar tu diseño) -->
+
+    <!-- CARD 4 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Singing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGzmwuE3Bc7CLWR-NECGn2B3c_IrHJ9yzpvbsAuejjJTYN35NYWU65QSIc1G44N-cwBUJQUiBNe2OQLDdtvVKnuUYYbsdpnesisegsscbp1RbAKhrxU_o-TGC6pflO5hetHblpJS4tp1-HLTuyaadKtNQJtS0umDJLWSk-8t2HfEa7w39yLo3J1eUwAZA0FSIFN8kSEdg-eE0XlBIT4kAg2JNSLxa3UEMX3OVBUs-pCjP3yP_nJsRqrcqMiwRuA5ar3LCXlD93"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Acoustic Session: "Nubes"</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">play_circle</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">500K vistas</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Stage" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPEoLs3rPSSeRzbtVNN6slI1eiXufClfIEPOSqdhNNbx_ihjR9I4z60YGLCBiefWdFC3fAzelEd3l0WiXOcPHq7AAcO1UIzqIGiKTv-uAM9IiwnD3gyu9Q2tI9y6od6on8xnyGHewX9iTSLcqdZNx_AxZ2HQj9s73b4NucykO1R_DHhkuihrllbbGapiqFdLSJMTH0mY0mjeUvwkMk7Yrh3Cb6wzHXOCZ9HNhbfQqqyR6CzyxhjzKY4oAjA8ZT2grJJPx8Xyig"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Tour Announcement 2025</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">event</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">Viral</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Concert audience" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1lR6D1fxdmaaBSKZhiApJ_V4HTTnl_EOvdbzIDF43Oara1TFP5z7KdliTeSTXRvDghHUI6H-YVDrCp31Vr5ziOm3ZMXSRp2lpF3XmerBcYB8wVKyWFU4rdPR2-Ae8yYWmg65Nmyr6cDciIZkaCXDhbP3vt7OplqHL3kaVBZJBnWvWt4N4LS3QYqpdt0i6TCL1uhjmnreqrft16Jvikd1UM1jadDAwHeTuvEdNmin-T7giU5rTf1vVtRRv9ihqC2PywvachgGw"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Festival Moments</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">visibility</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">2.1M</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Guitar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBigFDWEvFiWUfa39Nddvdl_K8yVaKr6q8hu_YUTDRStIKf81bt9v4nbvxEJK5QaSXzJ0_0HnmwUn2MJPjCut6pxaUyAQNSeJHgE4xUglNx3Lc8v9BqNobhmb3UjBl-3gk4WU7LJHmkDrULUzxRXNk88jvAXjK106skU2FHiS9HQHtTE-OQrl3Z1UwkUnbi38xTQ8b-dzNEfSI9uj19RCCOABQCIO1jcTnzTlEdvBv6qorw3idbV0JvCG6zFTLtl-39hs1ZblXE"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Late Night Vibes</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">nights_stay</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">Exclusivo</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Stage wide" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH4uK6p2TFphFe9MWHChGqUTXE6U1f_EdROyjePl6UmhZPoAitTS93xMn7O68EQZa3Jiid6ZEsuNJ_1R19j1L-a8d_bQUERDf41_SNLJB01Cv0avDD3FOhWVtFoUacApkHg-jyVgMkxilShtyd8bDi_NqSlNW-Uh-PEQ6kfer0ZN1UQBDhxE_5kynVFFkKoYvMd2Ypbr20QwuPxID3aYKhSBniuyxWs5-qIl1MyCHRK1QRwMQy74rN4l6g-HLXnv2YAY_sCXqV"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Fan Meetup Vlog</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">groups</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">125K vistas</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Artist" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9j2lhRFG3Y-LOHNhKvOrcXhH-5voCXA6J2ytK9uskbV7pM1aI5MbdLUlbQFdo9O2MrQC8U0DCjY0o2D4AAcCoBVIE_XLDONJ5XA7O95jORDoEo0quyrJ8Uz4QmAN7s_9qiBhnxKrMmAvZZ9RLj7XwLG8JnBfOQ6h7DZAcozyCGkAflDaFMgjjLijR6bb68awpvyl1yKkcBM1t-p7hwPTrb8mnC67avVlHR0ZX3ij1kg7YuLJRlFm6Bs7iLU3rxa7O-vOADEAY"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Summer Jam 2024</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">wb_sunny</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">Trending</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="relative aspect-[9/16] rounded-2xl overflow-hidden group video-card cursor-pointer bg-slate-200 dark:bg-slate-800">
+      <img alt="Recording" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy0bh8_OuuHHmUOugGhmWERq-xBs3XGq5PJAr1MDnSKOE6Se8R3jjVoXN-81UxbWSFeIS34zqkMB_76Yz86pmiVH62rz6spgT9PYJa7A5q2A-BHZRq_q4TYAnlp3QxPiTW1UeGF2TqW0BbREHmRFV0A1IBzVIpWfezpTJmJNOM022u9r-N3C5RrTX3QK3iY6FsW31JxviF2mV1cS39T1JrAIjd2dRYiJLegazWoq1jpec8VEDgmshos6wQXCa5a3yHvQhLxfRE"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+      <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+        <p class="font-bold text-sm leading-tight mb-1">Studio Bloopers 😂</p>
+        <div class="flex items-center gap-2 opacity-80">
+          <span class="material-icons-round text-xs text-primary">sentiment_very_satisfied</span>
+          <span class="text-[10px] uppercase tracking-wider font-semibold">Funny</span>
+        </div>
+      </div>
+      <div class="video-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center">
+          <span class="material-icons-round text-white text-3xl">play_arrow</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mt-16 text-center">
+    <button class="group inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 border-slate-200 dark:border-slate-800 hover:border-primary transition-all duration-300">
+      <span class="font-bold text-lg">Cargar más videos</span>
+      <span class="material-icons-round group-hover:rotate-180 transition-transform duration-500">expand_more</span>
+    </button>
+  </div>
+
+</main>
+
+<footer class="bg-slate-50 dark:bg-zinc-950 pt-20 pb-10 border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <img alt="DANGENIA Logo" class="w-12 h-12 rounded-full"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJv6QDsNINFtvrl6UIIhiPC99oFzdVQoM1EQXKiYFZeoJ4aAHnTHMz5G5w5NOeMcb8lQPHIlgPk2vEy5pV2JpR32O8xUW1h5jm9ou7OY4U5o8ZfDyyscaOVFPfU-vNkegKqXLI_lvdtw_wAwrxVLdNZeZl2F4GyED4oJ5eTANg5GAAoMNCLHZkUccrqDFznZzTpjmaxSURAnBoB8HHQDozs3ekyuLgTcW8dcUJ5J96MoOJpGCgahkv6EJdJnQ65yndMUzICE-T"/>
+          <span class="font-display font-black text-3xl tracking-tighter uppercase">DANGENIA</span>
+        </div>
+
+        <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-8">
+          Llevando el sonido del futuro a cada rincón del mundo. Únete a la comunidad oficial y no te pierdas nada.
+        </p>
+
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+             href="videos.html" aria-label="Instagram">
+            <i class="material-icons-round text-xl">camera_alt</i>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+             href="musica.html" aria-label="Música">
+            <i class="material-icons-round text-xl">music_note</i>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+             href="videos.html" aria-label="YouTube">
+            <i class="material-icons-round text-xl">play_arrow</i>
+          </a>
+          <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+             href="index.html" aria-label="Web">
+            <i class="material-icons-round text-xl">public</i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-sm text-primary">Navegación</h4>
+        <ul class="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
+          <li><a class="hover:text-primary transition-colors" href="sobremi.html">Sobre el Artista</a></li>
+          <li><a class="hover:text-primary transition-colors" href="musica.html">Discografía</a></li>
+          <li><a class="hover:text-primary transition-colors" href="videos.html">Videos</a></li>
+          <li><a class="hover:text-primary transition-colors" href="contrataciones.html">Contrataciones</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-sm text-primary">Soporte</h4>
+        <ul class="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
+          <li><a class="hover:text-primary transition-colors" href="contrataciones.html">Newsletter</a></li>
+          <li><a class="hover:text-primary transition-colors" href="contrataciones.html">FAQ</a></li>
+          <li><a class="hover:text-primary transition-colors" href="contrataciones.html">Prensa</a></li>
+          <li><a class="hover:text-primary transition-colors" href="contrataciones.html">Privacidad</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-slate-500 dark:text-slate-500 text-sm">© 2024 DANGENIA. Todos los derechos reservados.</p>
+      <p class="text-slate-500 dark:text-slate-500 text-sm flex items-center gap-1">
+        Diseñado con <span class="material-icons-round text-primary text-xs">favorite</span> para fans de todo el mundo.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const themeToggleBtn = document.getElementById('theme-toggle');
+
+  // Initial theme check
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+    }
+  });
+</script>
+
+</body>
+</html>
